@@ -84,23 +84,6 @@ namespace RemindMe.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = remindme.id }, remindme);
         }
-
-        // DELETE: api/remindmes/5
-        [ResponseType(typeof(remindme))]
-        public IHttpActionResult Deleteremindme(int id)
-        {
-            remindme remindme = db.remindmes.Find(id);
-            if (remindme == null)
-            {
-                return NotFound();
-            }
-
-            db.remindmes.Remove(remindme);
-            db.SaveChanges();
-
-            return Ok(remindme);
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
